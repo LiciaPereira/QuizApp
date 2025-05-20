@@ -30,6 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{55
 		Option.cs = Option.cs
 		Question.cs = Question.cs
 		Quiz.cs = Quiz.cs
+		Settings.cs = Settings.cs
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DTOs", "DTOs", "{8561716B-A0AC-473E-B101-5EC1B54C0CC9}"
@@ -37,6 +38,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{20159290-642F-4323-8B32-8E34F315BC27}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interfaces", "Interfaces", "{ACCBB267-6978-4052-BACB-1061FE807DFF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Validation", "Validation", "{C094E1E5-76CE-4CC5-B681-6E0A80A6C994}"
+	ProjectSection(SolutionItems) = preProject
+		QuestionValidation.cs = QuestionValidation.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -114,6 +120,7 @@ Global
 		{8561716B-A0AC-473E-B101-5EC1B54C0CC9} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{20159290-642F-4323-8B32-8E34F315BC27} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{ACCBB267-6978-4052-BACB-1061FE807DFF} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C094E1E5-76CE-4CC5-B681-6E0A80A6C994} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B3377899-3FC4-4DC7-AE17-141985EBD809}

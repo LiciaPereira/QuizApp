@@ -1,22 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using QuizApp.Core.Validation;
 
-namespace QuizApp.Core.Entities;
+public enum QuestionAmount { Five = 5, Ten = 10, Twenty = 20 }
 
-public class Quiz: BaseEntity {
+namespace QuizApp.Core.Entities {
+  public class Quiz : BaseEntity {
 
-  public required Category Category { get; set; }
+    public required Category Category { get; set; }
 
-  public required string Name { get; set; }
+    public required int CategoryId { get; set; }
 
-  public ICollection<Question> Questions { get; set; } = new List<Question>();
+    [Required(ErrorMessage = "Quiz title is required")]
+    [StringLength(100, MinimumLength = 5,
+      ErrorMessage = "Title must be between {2} and {1} characters")]
+    public required string Title { get; set; }
 
-  public required int QuestionsAmount { get; set; }
+    [Required(ErrorMessage = "Quiz description is required")]
+    [StringLength(500, ErrorMessage = "Description cannot exceed {1} characters")]
+    public required string Description { get; set; }
 
-  public bool Timer { get; set; }
-	
-	public TimeSpan? TimerDuration { get; set; }
+    [Required(ErrorMessage = "The quiz should have questions")]
+    [QuestionValidation(Minimum = 5, Maximum = 20, ErrorMessage = "There should be between {1} and {2} questions")]
+    public ICollection<Question> Questions { get; set; } = new List<Question>();
 
-  public bool Feedback { get; set; }
-
+    public bool CustomQuiz { get; set; }
+  }
 }
